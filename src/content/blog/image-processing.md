@@ -2,7 +2,7 @@
 title: 'Fourth Post'
 description: 'image-processing'
 pubDate: 'Jul 08 2021'
-heroImage: '//blog-placeholder-3.jpg'
+heroImage: '/blog-placeholder-3.jpg'
 ---
 
 # Image Processing 101

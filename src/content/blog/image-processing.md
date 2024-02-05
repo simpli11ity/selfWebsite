@@ -1,3 +1,10 @@
+---
+title: 'Fourth Post'
+description: 'image-processing'
+pubDate: 'Jul 08 2021'
+heroImage: '/selfWebsite/blog-placeholder-3.jpg'
+---
+
 # Image Processing 101
 
 Hi! Check out the work completed by our team as part of our Image Processing course 🙂

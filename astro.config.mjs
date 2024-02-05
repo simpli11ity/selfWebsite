@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://simpli11ity.github.io/',
+	site: 'https://simpli11ity.github.io',
 	base: '/selfWebsite',
 	integrations: [mdx(), sitemap()],
 });

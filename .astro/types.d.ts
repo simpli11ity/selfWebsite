@@ -213,7 +213,7 @@ declare module 'astro:content' {
   slug: "image-processing";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
 

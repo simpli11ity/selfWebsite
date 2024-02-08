@@ -3,4 +3,5 @@
 
 export const SITE_TITLE = 'blog';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
-export const ROUTE = '';
+export const ROUTE_LOCAL = '/selfWebsite/fonts/atkinson-bold.woff';
+export const ROUTE_ONLINE = '/fonts/atkinson-bold.woff'

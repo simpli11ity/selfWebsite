@@ -5,10 +5,4 @@ pubDate: 'Jul 08 2021'
 ---
 
 # Alicante
-![](/../selfWebsite/src/images/Alicante/PXL_20240307_140315441.jpg)
-<Image
-  src="../../images/Alicante/PXL_20240306_173139080.jpg"
-  width={myImage.width / 2}
-  densities={[1.5, 2]}
-  alt="A description of my image."
-/>
+![](https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Alicante/PXL_20240306_173139080.jpg?raw=true)

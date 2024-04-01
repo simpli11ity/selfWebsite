@@ -2,11 +2,10 @@
 title: 'Image Processing'
 description: 'image-processing'
 pubDate: 'Jul 08 2021'
-heroImage: 'src\images\Alicante\PXL_20240306_173139080.jpg'
 ---
 
 # Alicante
-
+![](/../selfWebsite/src/images/Alicante/PXL_20240307_140315441.jpg)
 <Image
   src="../../images/Alicante/PXL_20240306_173139080.jpg"
   width={myImage.width / 2}

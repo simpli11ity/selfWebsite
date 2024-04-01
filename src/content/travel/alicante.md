@@ -1,21 +1,9 @@
-
 ---
-title: 'Alicante'
-description: 'Alicante March 2024'
+title: 'Image Processing'
+description: 'image-processing'
 pubDate: 'Jul 08 2021'
-heroImage: "../../images\Alicante\PXL_20240306_173139080.jpg"
-<img
-  src="../../images\Alicante\PXL_20240306_173139080.jpg"
-  width="1600"
-  height="900"
-  decoding="async"
-  loading="lazy"
-  alt="A description of my image."
-/>
-
+heroImage: 'https://imageprocessingbypeter.files.wordpress.com/2019/11/amoeba-4-1.jpg'
 ---
 
 # Alicante
 
-Solo trip to Alicante.
-On reflection, i'm not sure if r

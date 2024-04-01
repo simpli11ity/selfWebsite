@@ -7,4 +7,4 @@ heroImage: 'src\images\Alicante\PXL_20240306_173139080.jpg'
 
 # Alicante
 
-![Alt text](../../images/Alicante/PXL_20240306_173139080.jpg?raw=true "Title: Alicante")
+![Alicante](../../images/Alicante/PXL_20240306_173139080.jpg?raw=true | width=800&height=600)

@@ -7,4 +7,9 @@ heroImage: 'src\images\Alicante\PXL_20240306_173139080.jpg'
 
 # Alicante
 
-![Alicante](../../images/Alicante/PXL_20240306_173139080.jpg?raw=true | width=800&height=600)
+<Image
+  src="../../images/Alicante/PXL_20240306_173139080.jpg"
+  width={myImage.width / 2}
+  densities={[1.5, 2]}
+  alt="A description of my image."
+/>

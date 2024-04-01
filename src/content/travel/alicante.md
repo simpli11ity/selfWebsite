@@ -2,6 +2,7 @@
 title: 'Alicante'
 description: 'Alicante'
 pubDate: 'Mar 05 24'
+heroImage: 'https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Alicante/PXL_20240306_173139080.jpg?raw=true'
 ---
 
 # Discovering Alicante: A Journey of Exploration

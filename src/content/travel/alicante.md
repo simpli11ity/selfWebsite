@@ -2,7 +2,7 @@
 ---
 title: 'Alicante'
 description: 'Alicante March 2024'
-pubDate: 'April 01 2024'
+pubDate: 'Apr 01 2024'
 heroImage: "../../images\Alicante\PXL_20240306_173139080.jpg"
 <img
   src="../../images\Alicante\PXL_20240306_173139080.jpg"

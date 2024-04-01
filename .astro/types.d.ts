@@ -216,6 +216,17 @@ declare module 'astro:content' {
   data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
+"travel": {
+	"Alicante.md": {
+		id: "alicante.md";
+	  slug: "travel";
+	  body: string;
+	  collection: "travel";
+	  data: InferEntrySchema<"travel">
+	} & { render(): Render[".md"] };
+};
+	
+
 
 	};
 

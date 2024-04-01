@@ -7,3 +7,5 @@ heroImage: '![Alicante_Harbour](src\images\Alicante\PXL_20240306_173139080.jpg)'
 
 # Alicante
 
+Solo trip to Alicante.
+On reflection, i'm not sure if r

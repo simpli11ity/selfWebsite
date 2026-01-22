@@ -34,7 +34,15 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: #0f172a;
+	body {
+  background: radial-gradient(
+    circle at top,
+    #eef3f9 0%,
+    #dfe7f2 45%,
+    #cfd9e6 100%
+  );
+}
+
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -47,8 +55,7 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
-	  background: #020617;
-  color: #e5e7eb;
+
 }
 h1,
 h2,

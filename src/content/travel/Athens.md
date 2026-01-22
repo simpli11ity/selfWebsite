@@ -3,6 +3,7 @@ title: 'Athens'
 description: 'Athens'
 pubDate: 'November 22 25'
 heroImage: 'https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Athens/PXL_20251109_140254860.jpg?raw=true'
+heroRatio: '4 / 3'
 ---
 
 # Discovering Athens: A Journey of self Exploration & historic charm

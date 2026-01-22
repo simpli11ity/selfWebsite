@@ -30,5 +30,3 @@ Situated west side of the Roman Agora,  build by donations.  The front of teh ga
 A stone greek theatre structure located on the southwest slope of the Acropolis of Athens.
 In ancient times, Odeons were built for musical contests and this ancient stone theatre has gone on to host some of the world’s best musical performances during the last 60 years since its modern day re-opening, including Nana Mouskouri, Luciano Pavarotti and Frank Sinatra to name a few.
 
-src\images\Athens\PXL_20251112_140918935.jpg
-![Alt="Marathon"](https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Athens/PXL_20251112_140918935.jpg?raw=true)

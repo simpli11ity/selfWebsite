@@ -5,7 +5,7 @@
  */
 
 :root {
-	--accent: #2337ff;
+	--accent: #000000;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -158,4 +158,54 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+/* =========================
+   Header / Navigation
+   ========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+/* Constrain header content */
+header > div,
+header > nav,
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+}
+
+/* Nav links */
+nav a {
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: rgba(15, 23, 42, 0.8);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+nav a:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Active page */
+nav a[aria-current="page"],
+nav a.active {
+  background: rgba(0, 0, 0, 0.12);
+  font-weight: 600;
+}
+
+/* Logo / blog label */
+header a:first-child {
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }

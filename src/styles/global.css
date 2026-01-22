@@ -34,14 +34,14 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	body {
+
   background: radial-gradient(
-    circle at top,
-    #eef3f9 0%,
-    #dfe7f2 45%,
-    #cfd9e6 100%
+    180deg,
+    #9abdee 0%,
+    #85909e 45%,
+    #aab9ca 100%
   );
-}
+
 
 	background-size: 100% 600px;
 	word-wrap: break-word;

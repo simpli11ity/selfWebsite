@@ -1,47 +1,264 @@
-/* =========================
-   Fix: white strip above/around header
-   ========================= */
+/*
+  Base styles (Bear Blog-ish) + DARK THEME + decent layout for /travel
+  Paste this whole file as your global CSS.
+*/
 
-/* Ensure nothing paints a white page background anywhere */
-html, body {
-  background-color: transparent !important;
+:root{
+  --accent:#93c5fd;
+  --accent-hover:#bfdbfe;
+
+  --bg0:#0b1220;
+  --bg1:#020617;
+
+  --text:#e5e7eb;
+  --muted:#a1a1aa;
+
+  --surface:rgba(255,255,255,0.06);
+  --surface-2:rgba(255,255,255,0.09);
+  --border:rgba(255,255,255,0.10);
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --radius:18px;
 }
 
-/* Astro layouts often wrap the page in these */
-body > header,
-body > nav,
-body > div:first-child,
-header, nav,
-header * , nav * {
-  background-color: transparent;
+@font-face{
+  font-family:'Atkinson';
+  src:url('/fonts/atkinson-regular.woff') format('woff');
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Atkinson';
+  src:url('/fonts/atkinson-bold.woff') format('woff');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
 }
 
-/* The actual top bar is usually the header/nav container or its direct children */
-header,
-header > div,
-header > nav,
-nav {
-  background: rgba(20, 20, 20, 0.92) !important;
+/* ===== Page background ===== */
+html{
+  min-height:100%;
+  background: linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 100%);
+}
+body{
+  font-family:'Atkinson', sans-serif;
+  margin:0;
+  padding:0;
+  text-align:left;
+  background:transparent;
+  color:var(--text);
+  font-size:20px;
+  line-height:1.7;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
 }
 
-/* If there’s a wrapper element inside header/nav that’s forcing white */
-header > * {
-  background: transparent !important;
+/* ===== Header / Nav (no white strip) ===== */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+
+  background: rgba(10, 10, 12, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+header > *{
+  max-width:1200px;
+  margin:0 auto;
+  padding:12px 20px;
 }
 
-/* Optional: make sure the header area spans edge-to-edge cleanly */
-header {
-  width: 100%;
+/* If your theme uses nav outside header too */
+nav{
+  max-width:1200px;
+  margin:0 auto;
+  padding:12px 20px;
 }
 
-/* If your theme uses a container class, cover common ones */
-.site-header,
-.navbar,
-.topbar,
-.header,
-.header-wrapper,
-nav.header,
-nav.nav,
-nav.navbar {
-  background: rgba(20, 20, 20, 0.92) !important;
+nav a{
+  color:rgba(229,231,235,0.9);
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:10px;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+nav a:hover{
+  background:rgba(255,255,255,0.08);
+  color:var(--text);
+}
+nav a[aria-current="page"],
+nav a.active{
+  background:rgba(147,197,253,0.18);
+  color:var(--text);
+  font-weight:700;
+}
+
+/* “blog” label/logo */
+header a:first-child{
+  font-weight:700;
+  letter-spacing:0.2px;
+}
+
+/* ===== Main layout ===== */
+main{
+  max-width:1200px;
+  margin:28px auto 56px;
+  padding:0 20px;
+}
+
+/* ===== Typography ===== */
+h1,h2,h3,h4,h5,h6{
+  margin:0 0 0.5rem 0;
+  color:var(--text);
+  line-height:1.2;
+}
+h1{ font-size:3.052em; }
+h2{ font-size:2.441em; }
+h3{ font-size:1.953em; }
+h4{ font-size:1.563em; }
+h5{ font-size:1.25em; }
+
+p{ margin-bottom:1em; }
+.prose p{ margin-bottom:2em; }
+
+strong,b{ font-weight:700; }
+
+a{ color:var(--accent); }
+a:hover{ color:var(--accent-hover); }
+
+hr{
+  border:none;
+  border-top:1px solid rgba(255,255,255,0.10);
+}
+
+/* ===== Media ===== */
+img{
+  max-width:100%;
+  height:auto;
+  border-radius:12px;
+  display:block;
+}
+
+/* ===== Code ===== */
+code{
+  padding:2px 6px;
+  background:rgba(2,6,23,0.9);
+  border:1px solid rgba(255,255,255,0.10);
+  border-radius:6px;
+  color:#e5e7eb;
+}
+pre{
+  padding:1.2em;
+  border-radius:12px;
+  background:rgba(2,6,23,0.9);
+  border:1px solid rgba(255,255,255,0.10);
+  overflow:auto;
+}
+pre > code{ all:unset; }
+
+/* ===== Blockquote ===== */
+blockquote{
+  border-left:4px solid rgba(147,197,253,0.8);
+  padding:0 0 0 18px;
+  margin:0;
+  font-size:1.15em;
+  color:rgba(229,231,235,0.9);
+}
+
+/* ===== Travel page: make it not look like a single sad column ===== */
+/* This is safe: it only kicks in if your travel list uses these common patterns */
+main ul,
+main ol{
+  padding-left:0;
+}
+main ul > li{
+  list-style:none;
+}
+
+/* If your travel index is a list of links/cards, this makes it a grid */
+main ul:has(> li a) {
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:24px;
+}
+@media (min-width: 900px){
+  main ul:has(> li a) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:26px;
+  }
+}
+@media (min-width: 1200px){
+  main ul:has(> li a) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Card styling for each travel item (works for common “li > a” structures) */
+main ul:has(> li a) > li{
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* Make the entire card clickable (if structure is li > a) */
+main ul:has(> li a) > li > a{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+
+/* Force images inside cards to a consistent hero shape */
+main ul:has(> li a) > li img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:0;
+}
+
+/* Card text spacing */
+main ul:has(> li a) > li a,
+main ul:has(> li a) > li{
+  padding:0;
+}
+main ul:has(> li a) > li a > :not(img){
+  padding:14px 16px 16px;
+}
+
+/* Title/date in cards */
+main ul:has(> li a) > li h2,
+main ul:has(> li a) > li h3{
+  margin:0;
+  font-size:1.1em;
+}
+main ul:has(> li a) > li p,
+main ul:has(> li a) > li time{
+  color:rgba(229,231,235,0.75);
+  font-size:0.9em;
+}
+
+/* ===== Mobile tweaks ===== */
+@media (max-width:720px){
+  body{ font-size:18px; }
+  main{ padding:0 14px; }
+  header > *{ padding:10px 14px; }
+}
+
+/* ===== Screen reader only ===== */
+.sr-only{
+  border:0;
+  padding:0;
+  margin:0;
+  position:absolute !important;
+  height:1px;
+  width:1px;
+  overflow:hidden;
+  clip:rect(1px, 1px, 1px, 1px);
+  clip-path:inset(50%);
+  white-space:nowrap;
 }

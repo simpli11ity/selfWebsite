@@ -36,14 +36,12 @@ body {
 	text-align: left;
 
   background: radial-gradient(
-    180deg,
+    circle at top,
     #9abdee 0%,
     #85909e 45%,
     #aab9ca 100%
   );
 
-
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));

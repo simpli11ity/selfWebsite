@@ -12,13 +12,60 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>Welcome to my blog!</h1>
-			<p>
-				A simple website hobby website to display projects & travel destinations, choose your poison
-			</p>
+			<main>
+			<header class="home-hero">
+				<h1>Peter Swayne</h1>
+				<p class="lead">
+				Travel notes, project write-ups, and a running archive of things I’m building and learning.
+				</p>
+			</header>
 
-		</main>
+			<section class="home-grid">
+				<article class="home-card">
+				<h2>Travel</h2>
+				<p>
+					Short posts with photos, routes, and the bits that are actually useful when you look back.
+				</p>
+				<a class="cta" href="/travel/">Explore travel →</a>
+				</article>
+
+				<article class="home-card">
+				<h2>Projects</h2>
+				<p>
+					Technical + practical work: automation, infrastructure, small builds, and experiments.
+				</p>
+				<a class="cta" href="/projects/">View projects →</a>
+				</article>
+
+				<article class="home-card">
+				<h2>About</h2>
+				<p>
+					What this site is for, what I’m focused on, and how to reach me.
+				</p>
+				<a class="cta" href="/about/">Read about →</a>
+				</article>
+			</section>
+
+			<section class="home-now">
+				<h2>Now</h2>
+				<ul>
+				<li>Adding a clean travel archive with consistent photo cards.</li>
+				<li>Publishing a few “proper” project write-ups (not just links).</li>
+				<li>Keeping the site fast, simple, and easy to update.</li>
+				</ul>
+			</section>
+
+			<section class="home-meta">
+				<h2>What to expect</h2>
+				<ul>
+				<li><strong>Short</strong> posts over long essays.</li>
+				<li><strong>Photos</strong> with context (where/when/why it mattered).</li>
+				<li><strong>Projects</strong> with what I did + what I’d do differently.</li>
+				</ul>
+			</section>
+			</main>
 		<Footer />
 	</body>
 </html>
+
+

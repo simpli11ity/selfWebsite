@@ -141,6 +141,7 @@ img{
   height:auto;
   border-radius:12px;
   display:block;
+  max-height: 420px;
 }
 
 /* ===== Code ===== */

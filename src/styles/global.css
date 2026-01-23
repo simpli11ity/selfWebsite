@@ -265,7 +265,7 @@ main ul:has(> li a) > li time{
 /* ===== Hero Image ===== */
 .hero {
   max-width: 1020px;
-  max-height: 480px;
+  max-height: 1020px;
   margin: 0 auto 24px;
   overflow: hidden;
   border-radius: 18px;

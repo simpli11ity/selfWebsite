@@ -1,7 +1,7 @@
 ---
 title: 'Bosnia'
 description: 'Bosnia'
-pubDate: 'Mar 05 24'
+pubDate: 'Feb 25 26'
 heroImage: 'https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Bosnia/PXL_20260228_090205961.RAW-01.jpg?raw=true'
 ---
 

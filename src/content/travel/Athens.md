@@ -26,6 +26,5 @@ Situated on the west side of the Roman Agora and built by donations, the front o
 
 # Odeon of Herodes Atticus
 ![Alt="Marathonssfda"](https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Athens/PXL_20251112_140918935.jpg?raw=true)
-![Alt="Marathonssfda"](https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Athens/PXL_20251112_140918935.jpg?raw=true)
 A stone greek theater structure located on the southwest slope of the Acropolis of Athens.
 In ancient times, Odeons were built for musical contests. This ancient stone theater has gone on to host some of the world’s best musical performances during the last 60 years since its modern day re-opening, including Nana Mouskouri, Luciano Pavarotti and Frank Sinatra, to name a few.

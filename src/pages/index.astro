@@ -1,14 +1,156 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<div class="page-shell">
+			<Header />
+			<main>
+				<section class="hero">
+					<div class="hero-bg"></div>
+					<div class="hero-overlay"></div>
+
+					<div class="hero-inner">
+						<p class="eyebrow">DevOps • Cloud • Travel</p>
+						<h1>Building Reliable Systems. Exploring the World.</h1>
+						<p class="lead">
+							I’m Peter Swayne — a DevOps engineer focused on automation, infrastructure,
+							and practical systems work, with travel notes and project write-ups alongside it.
+						</p>
+
+						<div class="hero-actions">
+							<a class="btn btn-primary" href="/about/">About Me</a>
+							<a class="btn btn-secondary" href="/projects/">View Projects</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="about-preview section-card">
+					<div class="about-image">
+						<img
+							src="/images/about/me.jpg"
+							alt="Peter Swayne"
+						/>
+					</div>
+
+					<div class="about-copy">
+						<p class="section-label">About Me</p>
+						<h2>Engineer by profession. Explorer by habit.</h2>
+						<p>
+							I work across cloud, automation, CI/CD, infrastructure, and reliability.
+							This site is a mix of technical write-ups, travel posts, and useful things
+							worth keeping in one place.
+						</p>
+						<p>
+							I prefer practical work over fluff: systems that deploy cleanly, projects with
+							actual outcomes, and travel notes that are worth reading again later.
+						</p>
+
+						<div class="feature-grid">
+							<div class="feature">
+								<h3>DevOps & Cloud</h3>
+								<p>AWS, Terraform, Docker, Kubernetes, CI/CD</p>
+							</div>
+							<div class="feature">
+								<h3>Automation</h3>
+								<p>Scripting, infrastructure workflows, small tools</p>
+							</div>
+							<div class="feature">
+								<h3>Reliability</h3>
+								<p>Monitoring, logging, deployment quality, ops</p>
+							</div>
+							<div class="feature">
+								<h3>Travel</h3>
+								<p>Trips, routes, photos, and what was actually worth doing</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="content-section">
+					<div class="section-heading">
+						<div>
+							<p class="section-label">Explore</p>
+							<h2>What’s here</h2>
+						</div>
+					</div>
+
+					<div class="card-grid">
+						<article class="content-card">
+							<span class="tag">Travel</span>
+							<h3>Travel</h3>
+							<p>
+								Trips, photos, routes, and notes that are actually useful once the trip is over.
+							</p>
+							<a class="text-link" href="/travel/">Explore travel →</a>
+						</article>
+
+						<article class="content-card">
+							<span class="tag">Projects</span>
+							<h3>Projects</h3>
+							<p>
+								Automation, infrastructure, small builds, experiments, and proper write-ups.
+							</p>
+							<a class="text-link" href="/projects/">View projects →</a>
+						</article>
+
+						<article class="content-card">
+							<span class="tag">About</span>
+							<h3>About</h3>
+							<p>
+								What I do, what I focus on, and what this site is trying to be.
+							</p>
+							<a class="text-link" href="/about/">Read more →</a>
+						</article>
+					</div>
+				</section>
+
+				<section class="content-section lower-grid">
+					<article class="info-panel">
+						<p class="section-label">Now</p>
+						<h2>Current focus</h2>
+						<ul>
+							<li>Cleaning up the travel archive so posts feel consistent.</li>
+							<li>Publishing better project write-ups instead of half-finished notes.</li>
+							<li>Keeping the site dark, simple, fast, and easy to maintain.</li>
+						</ul>
+					</article>
+
+					<article class="info-panel">
+						<p class="section-label">What to expect</p>
+						<h2>Style of the site</h2>
+						<ul>
+							<li>Short posts over bloated essays.</li>
+							<li>Photos with context, not just image dumps.</li>
+							<li>Projects with actual detail: what I built, what broke, what changed.</li>
+						</ul>
+					</article>
+				</section>
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>
+
 <style>
 	:root {
-		--bg: #0f1318;
-		--bg-soft: #171c23;
-		--panel: rgba(22, 28, 36, 0.82);
-		--panel-border: rgba(255, 255, 255, 0.06);
-		--text: #f3f1ec;
-		--muted: #a9b0b8;
-		--accent: #a97b5b;
-		--accent-2: #d7b08f;
-		--shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+		--bg: #08111f;
+		--bg-soft: #0d1728;
+		--panel: rgba(14, 24, 41, 0.78);
+		--panel-border: rgba(255, 255, 255, 0.08);
+		--text: #eef4ff;
+		--muted: #a9b7cd;
+		--accent: #4da3ff;
+		--accent-2: #7cc4ff;
+		--shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 		--radius: 24px;
 	}
 
@@ -17,9 +159,9 @@
 		margin: 0;
 		padding: 0;
 		background:
-			radial-gradient(circle at top left, rgba(169, 123, 91, 0.08), transparent 26%),
-			radial-gradient(circle at top right, rgba(255, 255, 255, 0.025), transparent 18%),
-			linear-gradient(180deg, #0d1116 0%, #13181f 100%);
+			radial-gradient(circle at top left, rgba(55, 116, 200, 0.16), transparent 30%),
+			radial-gradient(circle at top right, rgba(72, 143, 255, 0.14), transparent 28%),
+			linear-gradient(180deg, #07101c 0%, #091321 100%);
 		color: var(--text);
 		font-family:
 			Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -46,33 +188,26 @@
 		padding: 4rem;
 		margin-bottom: 2rem;
 		background:
-			linear-gradient(
-				90deg,
-				rgba(11, 14, 18, 0.94) 0%,
-				rgba(11, 14, 18, 0.82) 45%,
-				rgba(11, 14, 18, 0.56) 100%
-			);
+			linear-gradient(90deg, rgba(7, 13, 24, 0.92) 0%, rgba(7, 13, 24, 0.7) 45%, rgba(7, 13, 24, 0.3) 100%);
 		box-shadow: var(--shadow);
-		border: 1px solid rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.06);
 	}
 
 	.hero-bg {
 		position: absolute;
 		inset: 0;
 		background:
-			linear-gradient(90deg, rgba(10, 13, 18, 0.74), rgba(10, 13, 18, 0.18)),
+			linear-gradient(90deg, rgba(5, 10, 18, 0.72), rgba(5, 10, 18, 0.18)),
 			url('/images/home/hero.jpg') center center / cover no-repeat;
 		transform: scale(1.02);
-		filter: saturate(0.82) brightness(0.72);
-		background-blend-mode: multiply;
 	}
 
 	.hero-overlay {
 		position: absolute;
 		inset: 0;
 		background:
-			radial-gradient(circle at 72% 30%, rgba(169, 123, 91, 0.1), transparent 20%),
-			radial-gradient(circle at 68% 58%, rgba(255, 255, 255, 0.04), transparent 18%);
+			radial-gradient(circle at 75% 30%, rgba(77, 163, 255, 0.18), transparent 22%),
+			radial-gradient(circle at 70% 60%, rgba(77, 163, 255, 0.1), transparent 20%);
 	}
 
 	.hero-inner {
@@ -97,7 +232,6 @@
 		line-height: 0.98;
 		letter-spacing: -0.04em;
 		max-width: 12ch;
-		color: var(--text);
 	}
 
 	.lead {
@@ -123,32 +257,23 @@
 		border-radius: 999px;
 		text-decoration: none;
 		font-weight: 700;
-		transition:
-			transform 0.2s ease,
-			filter 0.2s ease,
-			background 0.2s ease,
-			border-color 0.2s ease;
+		transition: 0.2s ease;
 	}
 
 	.btn-primary {
-		background: linear-gradient(135deg, #b68460, #8d6247);
+		background: linear-gradient(135deg, var(--accent), #2d7be7);
 		color: white;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+		box-shadow: 0 10px 30px rgba(77, 163, 255, 0.22);
 	}
 
 	.btn-primary:hover {
 		transform: translateY(-1px);
-		filter: brightness(1.04);
 	}
 
 	.btn-secondary {
-		background: rgba(255, 255, 255, 0.05);
+		background: rgba(255, 255, 255, 0.06);
 		color: var(--text);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-	}
-
-	.btn-secondary:hover {
-		background: rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.section-card,
@@ -176,7 +301,6 @@
 		object-fit: cover;
 		border-radius: 20px;
 		display: block;
-		filter: saturate(0.92) contrast(1.02);
 	}
 
 	.about-copy h2,
@@ -186,7 +310,6 @@
 		font-size: clamp(1.8rem, 3vw, 2.7rem);
 		line-height: 1.08;
 		letter-spacing: -0.03em;
-		color: var(--text);
 	}
 
 	.about-copy p,
@@ -207,14 +330,13 @@
 	.feature {
 		padding: 1rem 1.1rem;
 		border-radius: 18px;
-		background: rgba(255, 255, 255, 0.025);
-		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.07);
 	}
 
 	.feature h3 {
 		margin: 0 0 0.45rem;
 		font-size: 1rem;
-		color: var(--text);
 	}
 
 	.feature p {
@@ -248,14 +370,13 @@
 	.content-card h3 {
 		margin: 0.7rem 0 0.75rem;
 		font-size: 1.35rem;
-		color: var(--text);
 	}
 
 	.tag {
 		display: inline-block;
 		padding: 0.38rem 0.72rem;
 		border-radius: 999px;
-		background: rgba(169, 123, 91, 0.12);
+		background: rgba(77, 163, 255, 0.14);
 		color: var(--accent-2);
 		font-size: 0.8rem;
 		font-weight: 700;
@@ -267,7 +388,6 @@
 		color: var(--text);
 		font-weight: 700;
 		text-decoration: none;
-		transition: color 0.2s ease;
 	}
 
 	.text-link:hover {

@@ -11,7 +11,7 @@ heroImage: 'https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Alic
 ![Alt="Image from the harbour"](https://github.com/simpli11ity/selfWebsite/blob/main/src/images/Alicante/PXL_20240306_173139080.jpg?raw=true)
 
 ### Solo trip to Alicante. 
-Short journey from the airport to the middle of Alicante, a short 5 minute walk from the epitimy of a tourist area. Interacting with people within these areas show an ignorance and bias if they presume you to be English.  In general the city at all hours even into the night was remarkably safe walking solo, male or female were out at all hours.
+Short journey from the airport to the middle of Alicante, a short 5 minute walk from the epitome of a tourist area. Interacting with people within these areas shows an ignorance and bias if they presume you to be English.  In general the city at all hours even into the night was remarkably safe walking solo, males or females were out at all hours.
 
 # The Majestic Santa Bárbara Castle
 

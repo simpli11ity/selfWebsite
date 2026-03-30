@@ -84,4 +84,8 @@ Baščaršija, an area of tourism comprised of Ottoman-era buildings. It is the 
 
 The city hall — hilariously, the area where the city hall was built was previously occupied by a house. As part of the arrangement for the city council to occupy the space, they were required to move the building brick by brick to the opposite side of the river. It now serves as a restaurant called the House of Spite, serving traditional meals. But on a real note, the traditional food is incredibly bland; somehow it is less flavourful than anything in Ireland.
 
-![Mostar](/images/Bosnia/PXL_20260228_145019684.RAW-01.jpg)
+<img 
+  src="../../images/Bosnia/PXL_20260227_145014171.RAW-01.jpg" 
+  alt="Mostar"
+  style="width: 100%; max-width: none; height: auto; image-rendering: auto;"
+/>

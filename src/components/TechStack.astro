@@ -1,0 +1,315 @@
+---
+const categories = [
+  {
+    name: "Cloud / Infra",
+    icon: "☁️",
+    items: ["AWS (Lambda, EC2, IAM, VPC, S3, DynamoDB)", "Terraform", "CloudFormation", "LocalStack"]
+  },
+  {
+    name: "CI/CD & Release",
+    icon: "🚀",
+    items: ["Jenkins (20+ pipelines)", "GitHub Actions", "Digital.ai Deploy / Release", "Liquibase"]
+  },
+  {
+    name: "Containers & Platform",
+    icon: "📦",
+    items: ["Docker", "Kubernetes / EKS"]
+  },
+  {
+    name: "Monitoring & Ops",
+    icon: "📊",
+    items: ["Prometheus", "Grafana", "Logging & Alerting", "Incident Handling"]
+  },
+  {
+    name: "Languages & Scripting",
+    icon: "💻",
+    items: ["Python", "Bash", "React"]
+  },
+  {
+    name: "Tools & Platforms",
+    icon: "🛠️",
+    items: ["SnapLogic", "Tableau", "Git Workflows"]
+  }
+];
+
+const accomplishments = [
+  {
+    title: "Infrastructure as Code",
+    metric: "300+",
+    description: "Managed Lambdas, ECS tasks, Step Functions, and EKS clusters via CloudFormation with reproducible dev→prod parity. Owned and managed Digital.ai Release and Digital.ai Deploy platforms. Handled state issues, drift recovery, and environment consistency."
+  },
+  {
+    title: "Deployment Acceleration",
+    metric: "60 min → 5–15 min",
+    description: "Redesigned CI/CD pipelines with approval gates, artifact promotion, and rollback strategies."
+  },
+  {
+    title: "Cost Optimization",
+    metric: "25–35%",
+    description: "Re-architected infrastructure for significant savings without impacting uptime. Optimized resource usage across AWS and managed services."
+  },
+  {
+    title: "Pipeline Architecture",
+    metric: "20+",
+    description: "Designed and maintained multi-environment pipeline systems (dev/stage/prod) with automated testing, security gates, and safe rollback mechanisms."
+  },
+  {
+    title: "Jenkins Management",
+    description: "Managed Jenkins platform infrastructure including upgrades, plugin management, and maintenance. Ensured stability and performance across 20+ production pipelines."
+  },
+  {
+    title: "On-Call Reliability",
+    description: "Served as production release manager handling outages, emergency deployments, and disaster recovery drills with minimal downtime."
+  },
+  {
+    title: "Automation & Scripts",
+    description: "Built SnapLogic pipeline integrations, AWS workflows, DynamoDB interactions, and React dashboards for Jenkins metrics + team visibility."
+  },
+  {
+    title: "Leadership",
+    metric: "2–4",
+    description: "Mentored juniors in infrastructure, DevOps practices, and production best practices. Reduced onboarding friction and escalations."
+  },
+  {
+    title: "Monitoring",
+    description: "Owned full observability stack: Prometheus + Grafana for infrastructure and application monitoring. Built alerts and runbooks for critical systems."
+  }
+];
+---
+
+<section class="content-section tech-stack-section">
+  <div class="section-heading">
+    <div>
+      <p class="section-label">Expertise</p>
+      <h2>My Tech Stack</h2>
+    </div>
+  </div>
+
+  <p class="tech-description">
+    Focus on DevOps, infrastructure automation, and reliable systems. I work with cloud platforms, 
+    containerization, CI/CD pipelines, and monitoring solutions to build scalable systems.
+  </p>
+
+  <div class="tech-grid">
+    {categories.map((category) => (
+      <article class="tech-card">
+        <div class="tech-card-header">
+          <span class="tech-icon">{category.icon}</span>
+          <h3>{category.name}</h3>
+        </div>
+        <ul class="tech-list">
+          {category.items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="content-section accomplishments-section">
+  <div class="section-heading">
+    <div>
+      <p class="section-label">Impact</p>
+      <h2>What I've Built</h2>
+    </div>
+  </div>
+
+  <p class="accomplishments-description">
+    Concrete results from infrastructure work: reducing deployment times, cutting costs, enabling teams, and maintaining reliability at scale.
+  </p>
+
+  <div class="accomplishments-grid">
+    {accomplishments.map((item) => (
+      <article class="accomplishment-card">
+        {item.metric && <div class="metric-badge">{item.metric}</div>}
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .tech-stack-section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .tech-description {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 65ch;
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .tech-card {
+    background: var(--panel);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+
+  .tech-card:hover {
+    border-color: rgba(147, 197, 253, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  }
+
+  .tech-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .tech-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .tech-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .tech-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .tech-list li {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 1.2rem;
+  }
+
+  .tech-list li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--accent-2);
+    font-weight: bold;
+  }
+
+  /* ===== Accomplishments Section ===== */
+  .accomplishments-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .accomplishments-description {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 65ch;
+  }
+
+  .accomplishments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.4rem;
+    margin-top: 1.6rem;
+  }
+
+  .accomplishment-card {
+    background: linear-gradient(135deg, rgba(147, 197, 253, 0.08), rgba(77, 163, 255, 0.06));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(147, 197, 253, 0.2);
+    border-radius: 18px;
+    padding: 1.6rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .accomplishment-card:hover {
+    border-color: rgba(147, 197, 253, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 25px 60px rgba(77, 163, 255, 0.15);
+  }
+
+  .metric-badge {
+    display: inline-block;
+    background: rgba(147, 197, 253, 0.18);
+    color: var(--accent-2);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .accomplishment-card h3 {
+    margin: 0 0 0.7rem 0;
+    font-size: 1.15rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .accomplishment-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .accomplishments-grid {
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .accomplishments-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-card {
+      padding: 1.2rem;
+    }
+
+    .accomplishment-card {
+      padding: 1.4rem;
+    }
+
+    .section-heading h2 {
+      font-size: 1.8rem;
+    }
+
+    .accomplishments-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+    }
+  }
+</style>

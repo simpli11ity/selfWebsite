@@ -17,70 +17,110 @@ const posts = (await getCollection('travel')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			main {
-				width: 960px;
+				width: min(1200px, calc(100% - 2rem));
+				margin: 0 auto;
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
+			.featured {
+				margin-bottom: 3rem;
 				text-align: center;
 			}
-			ul li:first-child img {
+			.featured img {
 				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
+				max-width: 800px;
+				height: auto;
 				border-radius: 12px;
+				margin-bottom: 1.5rem;
 			}
-			ul li a {
-				display: block;
-			}
-			.title {
+			.featured .title {
+				font-size: 2.369rem;
 				margin: 0;
 				color: rgb(var(--black));
 				line-height: 1;
 			}
-			.date {
-				margin: 0;
+			.featured .date {
+				margin: 0.5rem 0 0;
 				color: rgb(var(--gray));
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
+			.posts-list {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.post-item {
+				display: block;
+			}
+			.post-item:nth-child(even) {
+				direction: ltr;
+			}
+			.post-image {
+				position: relative;
+				overflow: hidden;
+				border-radius: 12px;
+				height: 320px;
+				display: flex;
+				align-items: flex-end;
+			}
+			.post-image img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+				z-index: 0;
+			}
+			.post-image::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+				z-index: 1;
+			}
+			.post-image-text {
+				position: relative;
+				z-index: 2;
+				padding: 2rem;
+				width: 100%;
+			}
+			.post-image-text a {
+				text-decoration: none;
+			}
+			.post-image .title {
+				font-size: 1.75rem;
+				margin: 0 0 0.5rem;
+				color: white;
+				line-height: 1.2;
+			}
+			.post-image .date {
+				margin: 0;
+				color: rgba(255, 255, 255, 0.9);
+				font-size: 0.95rem;
+			}
+			.post-content {
+				display: none;
+			}
+			.post-item a:hover .title,
+			.post-item a:hover .date {
 				color: rgb(var(--accent));
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
+			@media (max-width: 768px) {
+				main {
+					width: calc(100% - 1rem);
 				}
-				ul li {
-					width: 100%;
-					text-align: center;
+				.post-item {
+					grid-template-columns: 1fr;
+					gap: 1rem;
 				}
-				ul li:first-child {
-					margin-bottom: 0;
+				.post-item:nth-child(even) {
+					direction: ltr;
 				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+				.featured .title {
+					font-size: 1.563rem;
+				}
+				.post-content .title {
+					font-size: 1.35rem;
 				}
 			}
 		</style>
@@ -89,17 +129,40 @@ const posts = (await getCollection('travel')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
+				{posts.length > 0 && (
+					<div class="featured">
+						<a href={`/travel/${posts[0].slug}/`}>
+							<img width={800} height={400} src={posts[0].data.heroImage} alt="" />
+							<h2 class="title">{posts[0].data.title}</h2>
+							<p class="date">
+								<FormattedDate date={posts[0].data.pubDate} />
+							</p>
+						</a>
+					</div>
+				)}
+				<ul class="posts-list">
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/travel/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
+						posts.slice(1).map((post) => (
+							<li class="post-item">
+								<div class="post-image">
+									<img width={500} height={350} src={post.data.heroImage} alt="" />
+									<div class="post-image-text">
+										<a href={`/travel/${post.slug}/`}>
+											<h3 class="title">{post.data.title}</h3>
+											<p class="date">
+												<FormattedDate date={post.data.pubDate} />
+											</p>
+										</a>
+									</div>
+								</div>
+								<div class="post-content">
+									<a href={`/travel/${post.slug}/`}>
+										<h3 class="title">{post.data.title}</h3>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+									</a>
+								</div>
 							</li>
 						))
 					}

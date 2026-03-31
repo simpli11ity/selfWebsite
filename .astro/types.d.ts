@@ -184,30 +184,21 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
-"first-post.md": {
-	id: "first-post.md";
-  slug: "first-post";
+		"projects": {
+"image-procesfsing.md": {
+	id: "image-procesfsing.md";
+  slug: "image-procesfsing";
   body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
-"markdown-style-guide.md": {
-	id: "markdown-style-guide.md";
-  slug: "markdown-style-guide";
+"image-processing copy.md": {
+	id: "image-processing copy.md";
+  slug: "image-processing-copy";
   body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
+  collection: "projects";
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
-"using-mdx.mdx": {
-	id: "using-mdx.mdx";
-  slug: "using-mdx";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".mdx"] };
-};
-"projects": {
 "image-processing.md": {
 	id: "image-processing.md";
   slug: "image-processing";
@@ -217,16 +208,28 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "travel": {
-	"Alicante.md": {
-		id: "alicante.md";
-	  slug: "travel";
-	  body: string;
-	  collection: "travel";
-	  data: InferEntrySchema<"travel">
-	} & { render(): Render[".md"] };
+"Athens.md": {
+	id: "Athens.md";
+  slug: "athens";
+  body: string;
+  collection: "travel";
+  data: InferEntrySchema<"travel">
+} & { render(): Render[".md"] };
+"Bosnia.md": {
+	id: "Bosnia.md";
+  slug: "bosnia";
+  body: string;
+  collection: "travel";
+  data: InferEntrySchema<"travel">
+} & { render(): Render[".md"] };
+"alicante.md": {
+	id: "alicante.md";
+  slug: "alicante";
+  body: string;
+  collection: "travel";
+  data: InferEntrySchema<"travel">
+} & { render(): Render[".md"] };
 };
-	
-
 
 	};
 

@@ -20,26 +20,33 @@ const posts = (await getCollection('travel')).sort(
 				width: min(1200px, calc(100% - 2rem));
 				margin: 0 auto;
 			}
-			.featured {
+			.travel-hero {
 				margin-bottom: 3rem;
-				text-align: center;
-			}
-			.featured img {
-				width: 100%;
-				max-width: 800px;
-				height: auto;
+				position: relative;
+				height: 320px;
 				border-radius: 12px;
-				margin-bottom: 1.5rem;
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: linear-gradient(135deg, rgba(77, 163, 255, 0.15), rgba(147, 197, 253, 0.1));
+				border: 1px solid rgba(147, 197, 253, 0.2);
 			}
-			.featured .title {
-				font-size: 2.369rem;
+			.travel-hero-content {
+				text-align: center;
+				z-index: 2;
+				position: relative;
+			}
+			.travel-hero-emoji {
+				font-size: 5rem;
+				margin-bottom: 1rem;
+				display: block;
+			}
+			.travel-hero h2 {
+				font-size: 2.5rem;
 				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.featured .date {
-				margin: 0.5rem 0 0;
-				color: rgb(var(--gray));
+				color: var(--text);
+				letter-spacing: -0.02em;
 			}
 			.posts-list {
 				display: flex;
@@ -51,6 +58,11 @@ const posts = (await getCollection('travel')).sort(
 			}
 			.post-item {
 				display: block;
+			}
+			.post-item a {
+				display: block;
+				text-decoration: none;
+				cursor: pointer;
 			}
 			.post-item:nth-child(even) {
 				direction: ltr;
@@ -84,9 +96,6 @@ const posts = (await getCollection('travel')).sort(
 				padding: 2rem;
 				width: 100%;
 			}
-			.post-image-text a {
-				text-decoration: none;
-			}
 			.post-image .title {
 				font-size: 1.75rem;
 				margin: 0 0 0.5rem;
@@ -98,9 +107,6 @@ const posts = (await getCollection('travel')).sort(
 				color: rgba(255, 255, 255, 0.9);
 				font-size: 0.95rem;
 			}
-			.post-content {
-				display: none;
-			}
 			.post-item a:hover .title,
 			.post-item a:hover .date {
 				color: rgb(var(--accent));
@@ -109,15 +115,21 @@ const posts = (await getCollection('travel')).sort(
 				main {
 					width: calc(100% - 1rem);
 				}
+				.travel-hero {
+					height: 240px;
+				}
+				.travel-hero-emoji {
+					font-size: 3rem;
+				}
+				.travel-hero h2 {
+					font-size: 1.8rem;
+				}
 				.post-item {
 					grid-template-columns: 1fr;
 					gap: 1rem;
 				}
 				.post-item:nth-child(even) {
 					direction: ltr;
-				}
-				.featured .title {
-					font-size: 1.563rem;
 				}
 				.post-content .title {
 					font-size: 1.35rem;
@@ -129,40 +141,27 @@ const posts = (await getCollection('travel')).sort(
 		<Header />
 		<main>
 			<section>
-				{posts.length > 0 && (
-					<div class="featured">
-						<a href={`/travel/${posts[0].slug}/`}>
-							<img width={800} height={400} src={posts[0].data.heroImage} alt="" />
-							<h2 class="title">{posts[0].data.title}</h2>
-							<p class="date">
-								<FormattedDate date={posts[0].data.pubDate} />
-							</p>
-						</a>
+				<div class="travel-hero">
+					<div class="travel-hero-content">
+						<span class="travel-hero-emoji">🌍</span>
+						<h2>Let's Travel</h2>
 					</div>
-				)}
+				</div>
 				<ul class="posts-list">
 					{
-						posts.slice(1).map((post) => (
+						posts.map((post) => (
 							<li class="post-item">
-								<div class="post-image">
-									<img width={500} height={350} src={post.data.heroImage} alt="" />
-									<div class="post-image-text">
-										<a href={`/travel/${post.slug}/`}>
+								<a href={`/travel/${post.slug}/`}>
+									<div class="post-image">
+										<img width={500} height={350} src={post.data.heroImage} alt="" />
+										<div class="post-image-text">
 											<h3 class="title">{post.data.title}</h3>
 											<p class="date">
 												<FormattedDate date={post.data.pubDate} />
 											</p>
-										</a>
+										</div>
 									</div>
-								</div>
-								<div class="post-content">
-									<a href={`/travel/${post.slug}/`}>
-										<h3 class="title">{post.data.title}</h3>
-										<p class="date">
-											<FormattedDate date={post.data.pubDate} />
-										</p>
-									</a>
-								</div>
+								</a>
 							</li>
 						))
 					}

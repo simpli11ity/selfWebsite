@@ -52,6 +52,11 @@ const posts = (await getCollection('projects')).sort(
 			.post-item {
 				display: block;
 			}
+			.post-item a {
+				display: block;
+				text-decoration: none;
+				cursor: pointer;
+			}
 			.post-image {
 				position: relative;
 				overflow: hidden;
@@ -81,9 +86,6 @@ const posts = (await getCollection('projects')).sort(
 				padding: 2rem;
 				width: 100%;
 			}
-			.post-image-text a {
-				text-decoration: none;
-			}
 			.post-image .title {
 				font-size: 1.75rem;
 				margin: 0 0 0.5rem;
@@ -95,8 +97,9 @@ const posts = (await getCollection('projects')).sort(
 				color: rgba(255, 255, 255, 0.9);
 				font-size: 0.95rem;
 			}
-			.post-content {
-				display: none;
+			.post-item a:hover .title,
+			.post-item a:hover .date {
+				color: rgb(var(--accent));
 			}
 			@media (max-width: 768px) {
 				main {
@@ -133,25 +136,17 @@ const posts = (await getCollection('projects')).sort(
 					{
 						posts.slice(1).map((post) => (
 							<li class="post-item">
-								<div class="post-image">
-									<img width={800} height={400} src={post.data.heroImage} alt="" />
-									<div class="post-image-text">
-										<a href={`/projects/${post.slug}/`}>
+								<a href={`/projects/${post.slug}/`}>
+									<div class="post-image">
+										<img width={800} height={400} src={post.data.heroImage} alt="" />
+										<div class="post-image-text">
 											<h3 class="title">{post.data.title}</h3>
 											<p class="date">
 												<FormattedDate date={post.data.pubDate} />
 											</p>
-										</a>
+										</div>
 									</div>
-								</div>
-								<div class="post-content">
-									<a href={`/projects/${post.slug}/`}>
-										<h3 class="title">{post.data.title}</h3>
-										<p class="date">
-											<FormattedDate date={post.data.pubDate} />
-										</p>
-									</a>
-								</div>
+								</a>
 							</li>
 						))
 					}
